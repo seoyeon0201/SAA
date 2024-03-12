@@ -460,4 +460,20 @@ dig [RECORD NAME]   #생성한 record에 연결된 value (IP) 확인
   - 확인
     - CloudShell에서 `dig [RECORD NAME]` 하면 `healthy한 IP만이 출력`되고 `healthy한 IP만이 매핑됨`
 
+## Domain Registar vs DNS Service
 
+#### Domain Registrar
+
+- domain name을 구매하고 등록할 수 있음
+- Ex. GoDaddy, Amazon Registrar Inc
+- Domain Registrar를 통해 domain을 등록하면 DNS record를 관리하는 DNS service 제공
+  - Amazon host name으로 DNS 이름을 등록했다면 DNS record 관리를 위한 Route53 hosting zone을 가짐
+- But DNS record로 AWS Route53을 사용하지 않고 Amazon Registrar를 사용하거나 반대로 GoDaddy로 도메인을 등록해도됨
+  - GoDaddy에서 도매인을 구매하고 DNS record 관리는 Route53에서 하는 것도 가능
+
+- 요약
+  - 외부에서 도메인을 구매해도 DNS 서비스 제공자로 Route53으로 record를 관리할 수 있음
+  - 1. Route53에서 `Public Hosting Zone` 생성
+  - 2. 도메인을 구매한 타사 웹사이트에서 `Name Server record 업데이트`
+    - Route53 NS를 가리키게 됨
+  - 즉 Registrar와 DNS Service는 다름! Registrar가 일부 DNS service를 제공하기는 함
