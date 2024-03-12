@@ -1,8 +1,10 @@
 ## Stateless Web App : WhatIsTheTime.com
 
+#### Service 설명
 - 시간을 알려주는 서비스
     - DB는 필요없고 각 instance와 server는 시간을 알고 있음
-    - `downtime 제거`, `수직, 수평으로 확장`를 목적으로 시작
+    - downtime 제거
+    - 수직, 수평으로 확장할 수 있어야함
 
 #### Starting Simple
 
@@ -79,7 +81,7 @@
     - auto-scaling group의 capacity를 최소화하기 위해 인스턴스를 reserve함으로써 미래에 상당한 비용을 절감할 수 있음
     - 극단적으로 비용 절감을 위해 spot instance를 사용할 수 있음
 
-#### 서비스 적용 개념
+## Service 적용 개념
 
 - Public vs Private IP and EC2 instances
 - Elastic IP vs Route53 vs Load Balancers
@@ -90,6 +92,6 @@
 - Security Group Rules
 - Reservation of capacity for costing savings when possible
 
-#### Solution Architecture 고려 요소
+## Solution Architecture 고려 요소
 
 `costs`, `performance`, `reliability`, `security`, `operational excellence`
